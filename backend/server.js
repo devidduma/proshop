@@ -1,10 +1,14 @@
 import express from "express";
 import dotenv from "dotenv";
 import products from "./data/products.js";
+import connectDB from "./config/db.js";
 
-dotenv.config();
+dotenv.config({ path: "./.env" });
 const port = process.env.PORT || 5000;
 const app = express();
+
+/* Connect to MongoDB */
+connectDB();
 
 // CORS HEADERS MIDDLEWARE
 app.use(function (req, res, next) {
