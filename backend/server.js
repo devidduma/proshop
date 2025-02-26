@@ -4,6 +4,7 @@ import connectDB from "./config/db.js";
 import path from "path";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import cookieParser from "cookie-parser";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 /**
@@ -19,10 +20,12 @@ const app = express();
 connectDB();
 
 /**
- * Body Parser Middleware
+ * Middleware
+ * Body Parser, URL Encoded, Cookie Parser
  */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 /**
  * CORS HEADERS MIDDLEWARE
