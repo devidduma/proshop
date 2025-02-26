@@ -19,6 +19,12 @@ const app = express();
 connectDB();
 
 /**
+ * Body Parser Middleware
+ */
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+/**
  * CORS HEADERS MIDDLEWARE
  */
 app.use(function (req, res, next) {
