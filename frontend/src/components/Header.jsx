@@ -28,7 +28,7 @@ const Header = () => {
                                     )
                                 }
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/auth"><FaUser /> Sign in</Nav.Link>
+                            <Nav.Link as={Link} to="/login"><FaUser /> Sign in</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
