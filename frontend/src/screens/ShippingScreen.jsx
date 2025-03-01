@@ -34,7 +34,7 @@ const ShippingScreen = () => {
 
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId="address" className="my-2">
-                    <Form.Label>Address:</Form.Label>
+                    <Form.Label>Address</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Enter address"
@@ -43,7 +43,7 @@ const ShippingScreen = () => {
                     ></Form.Control>
                 </Form.Group>
                 <Form.Group controlId="city" className="my-2">
-                    <Form.Label>City:</Form.Label>
+                    <Form.Label>City</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Enter city"
@@ -52,7 +52,7 @@ const ShippingScreen = () => {
                     ></Form.Control>
                 </Form.Group>
                 <Form.Group controlId="postalCode" className="my-2">
-                    <Form.Label>Postal Code:</Form.Label>
+                    <Form.Label>Postal Code</Form.Label>
                     <Form.Control
                         type="postalCode"
                         placeholder="Enter postal code"
