@@ -4,7 +4,8 @@ import Message from "../../components/Message";
 import Loader from "../../components/Loader";
 import {
     useGetProductsQuery,
-    useCreateProductMutation
+    useCreateProductMutation,
+    useDeleteProductMutation
 } from "../../slices/productsApiSlice";
 import { Link } from "react-router-dom";
 import {toast} from "react-toastify";
@@ -15,8 +16,17 @@ const ProductListScreen = () => {
 
     const [createProduct, { isLoading: loadingCreate }] = useCreateProductMutation();
 
-    const deleteHandler = (id) => {
-        console.log("delete", id);
+    const [deleteProduct, { isLoading: loadingDelete }] = useDeleteProductMutation();
+
+    const deleteHandler = async (id) => {
+        if(window.confirm("Are you sure?")) {
+            try {
+                await deleteProduct(id);
+                refetch();
+            } catch(error) {
+                toast.error(error?.data?.message || error.error);
+            }
+        }
     };
 
     const createProductHandler = async () => {
@@ -42,6 +52,7 @@ const ProductListScreen = () => {
             </Col>
         </Row>
         { loadingCreate && <Loader /> }
+        { loadingDelete && <Loader /> }
         { isLoading ? <Loader /> : error ? <Message variant="danger">{error}</Message> : (
             <>
                 <Table striped hover responsive className="table-sm">
