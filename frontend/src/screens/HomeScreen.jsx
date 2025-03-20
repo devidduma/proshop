@@ -1,5 +1,6 @@
 import {Col, Row} from "react-bootstrap";
 import {useParams} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Product from "../components/Product";
 import Loader from "../components/Loader";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
@@ -13,6 +14,7 @@ const HomeScreen = () => {
 
     return (
         <>
+        { keyword && <Link to="/" className="btn btn-light mb-4">Go back</Link> }
             { isLoading ? (
                 <Loader />
             ) : error ? (
