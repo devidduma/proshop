@@ -19,11 +19,11 @@ proshop\backend> cd ..
 proshop> cd ./frontend
 proshop\frontend> npm install
 ```
-2. Install dependencies from `package.json` in the _root_ folder using `npm install` or `yarn install`:
+2. Go to _root_ folder and install all dependencies from `package.json` using `npm install` or `yarn install`:
 ```console
 proshop> npm install
 ```
-3. Run backend and frontend from _root_ folder using scripts from `package.json` in the _root_ folder using `npm` and `concurrently`:
+3. Run backend and frontend from _root_ folder with scripts from `package.json` using `npm` and `concurrently`:
 ```console
 proshop> npm run dev
 ```
